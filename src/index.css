@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1C1819;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  ::selection {
+    background: #E8DEC9;
+    color: #1C1819;
+  }
+}
+
+/* Custom Luxury Gradients & Borders */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B28A44 0%, #D4AF37 40%, #E6CA65 70%, #946E34 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A059 0%, #E6CA65 50%, #B28A44 100%);
+}
+
+.gold-border {
+  border-image: linear-gradient(to right, rgba(197, 160, 89, 0.2), rgba(197, 160, 89, 0.8), rgba(197, 160, 89, 0.2)) 1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(222, 198, 169, 0.35);
+}
+
+.glass-card-dark {
+  background: rgba(28, 24, 25, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #DEC6A9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B28A44;
+}
