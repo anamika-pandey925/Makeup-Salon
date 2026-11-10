@@ -125,11 +125,11 @@ export default function Footer({ onOpenBooking }) {
                 type="email"
                 required
                 placeholder="Enter your email"
-                className="w-full px-4 py-2.5 rounded-full bg-white/10 border border-white/20 text-xs text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold-400"
+                className="w-full px-4 py-3 sm:py-2.5 rounded-full bg-white/10 border border-white/20 text-base sm:text-xs text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-gold-400 min-h-[44px]"
               />
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-full bg-gold-500 hover:bg-gold-600 text-black text-xs uppercase tracking-widest font-semibold transition-colors"
+                className="w-full py-3 sm:py-2.5 rounded-full bg-gold-500 hover:bg-gold-600 text-black text-xs uppercase tracking-widest font-semibold transition-colors min-h-[44px]"
               >
                 Join Exclusive List
               </button>
@@ -139,16 +139,16 @@ export default function Footer({ onOpenBooking }) {
         </div>
 
         {/* Bottom Copyright & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-champagne-light/60 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-champagne-light/60 gap-4 text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} {SALON_INFO.name} Haute Beauty Studio. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-champagne-light transition-colors cursor-pointer">Privacy Policy</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <span className="hover:text-champagne-light transition-colors cursor-pointer py-1">Privacy Policy</span>
             <span>•</span>
-            <span className="hover:text-champagne-light transition-colors cursor-pointer">Terms of Service</span>
+            <span className="hover:text-champagne-light transition-colors cursor-pointer py-1">Terms of Service</span>
             <span>•</span>
-            <span className="hover:text-champagne-light transition-colors cursor-pointer">Bridal Contract</span>
+            <span className="hover:text-champagne-light transition-colors cursor-pointer py-1">Bridal Contract</span>
           </div>
         </div>
 

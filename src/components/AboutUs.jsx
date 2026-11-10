@@ -36,7 +36,7 @@ export default function AboutUs({ onOpenBooking }) {
               </div>
 
               {/* Secondary Floating Studio Image */}
-              <div className="hidden sm:block absolute -bottom-10 -right-8 w-56 h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              <div className="hidden md:block absolute -bottom-8 -right-4 lg:-bottom-10 lg:-right-8 w-48 h-48 lg:w-56 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                 <img
                   src={ARTIST_BIO.studioImage}
                   alt="AURA LUXE Sanctuary Studio"
@@ -49,7 +49,7 @@ export default function AboutUs({ onOpenBooking }) {
               </div>
 
               {/* Experience Badge Pill */}
-              <div className="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gold-200 flex items-center gap-3">
+              <div className="absolute -top-5 left-2 sm:-left-4 lg:-left-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-gold-200 flex items-center gap-2.5 sm:gap-3">
                 <div className="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center text-gold-700">
                   <Award className="w-6 h-6" />
                 </div>

@@ -111,7 +111,7 @@ export default function ContactSection() {
             </div>
 
             {/* Social Links */}
-            <div className="p-5 rounded-2xl bg-white/70 border border-[#EBDDC9] flex items-center justify-between">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/70 border border-[#EBDDC9] flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs uppercase tracking-wider font-semibold text-[#1C1819]">
                 Follow Haute Looks:
               </span>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                   href={SALON_INFO.socials.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-gold-50 hover:bg-gold-600 hover:text-white text-gold-700 flex items-center justify-center transition-colors shadow-sm"
+                  className="w-10 h-10 rounded-full bg-gold-50 hover:bg-gold-600 hover:text-white text-gold-700 flex items-center justify-center transition-colors shadow-sm min-w-[40px] min-h-[40px]"
                   aria-label="Instagram"
                 >
                   <InstagramIcon className="w-4 h-4" />
@@ -129,14 +129,14 @@ export default function ContactSection() {
                   href={SALON_INFO.socials.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-gold-50 hover:bg-gold-600 hover:text-white text-gold-700 flex items-center justify-center transition-colors shadow-sm"
+                  className="w-10 h-10 rounded-full bg-gold-50 hover:bg-gold-600 hover:text-white text-gold-700 flex items-center justify-center transition-colors shadow-sm min-w-[40px] min-h-[40px]"
                   aria-label="Facebook"
                 >
                   <FacebookIcon className="w-4 h-4" />
                 </a>
                 <button
                   onClick={handleWhatsAppClick}
-                  className="w-10 h-10 rounded-full bg-green-50 hover:bg-green-600 hover:text-white text-green-700 flex items-center justify-center transition-colors shadow-sm"
+                  className="w-10 h-10 rounded-full bg-green-50 hover:bg-green-600 hover:text-white text-green-700 flex items-center justify-center transition-colors shadow-sm min-w-[40px] min-h-[40px]"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -147,21 +147,21 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Interactive Google Map Integration */}
-          <div className="lg:col-span-7 rounded-3xl overflow-hidden shadow-xl border border-[#EBDDC9] relative min-h-[440px] bg-cream-200">
+          <div className="lg:col-span-7 rounded-3xl overflow-hidden shadow-xl border border-[#EBDDC9] relative min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] bg-cream-200">
             <iframe
               title="AURA LUXE Salon Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13221.796417726588!2d-118.40698188133589!3d34.06733246231948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd718d84!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1714500000000!5m2!1sen!2sus"
-              className="w-full h-full min-h-[440px] border-0 filter contrast-[1.05]"
+              className="w-full h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[440px] border-0 filter contrast-[1.05]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
             {/* Studio Badge on Map */}
-            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-gold-200 pointer-events-none max-w-xs">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-gold-200 pointer-events-none max-w-[calc(100%-1.5rem)] sm:max-w-xs">
               <div className="flex items-center gap-2 mb-1">
-                <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-                <span className="font-playfair text-sm font-bold text-[#1C1819]">AURA LUXE Beauty Studio</span>
+                <Sparkles className="w-3.5 h-3.5 text-gold-600 shrink-0" />
+                <span className="font-playfair text-xs sm:text-sm font-bold text-[#1C1819] truncate">AURA LUXE Beauty Studio</span>
               </div>
-              <p className="text-[11px] text-[#6E6769]">Valet Parking & Private Elevator Available</p>
+              <p className="text-[10px] sm:text-[11px] text-[#6E6769]">Valet Parking & Private Elevator Available</p>
             </div>
           </div>
 

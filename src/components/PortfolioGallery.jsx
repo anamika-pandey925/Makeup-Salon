@@ -29,13 +29,13 @@ export default function PortfolioGallery({ onSelectServiceForBooking }) {
             Browse our curated editorial gallery celebrating timeless royal brides, cocktail and sangeet glam, and bespoke hair architecture.
           </p>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+          {/* Filter Pills with Mobile Touch Scroll */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap sm:justify-center no-scrollbar mt-6 sm:mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 ${
+                className={`whitespace-nowrap shrink-0 px-4 sm:px-5 py-2 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 min-h-[38px] ${
                   activeFilter === filter
                     ? 'bg-[#1C1819] text-white shadow-md'
                     : 'bg-white/80 hover:bg-white text-[#5C5457] border border-[#EBDDC9] hover:border-gold-400'
@@ -93,24 +93,24 @@ export default function PortfolioGallery({ onSelectServiceForBooking }) {
         {/* Lightbox Zoom Modal */}
         {selectedImage && (
           <div
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fade-in"
             onClick={() => setSelectedImage(null)}
           >
             <div
-              className="relative max-w-4xl w-full bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border border-gold-400/30 grid grid-cols-1 md:grid-cols-12"
+              className="relative max-w-4xl w-full bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-2xl border border-gold-400/30 grid grid-cols-1 md:grid-cols-12 max-h-[92vh] supports-[height:100dvh]:max-h-[92dvh] overflow-y-auto ios-scroll"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/50 hover:bg-black text-white flex items-center justify-center transition-colors"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors shadow-lg"
                 aria-label="Close Lightbox"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* Left Column: Image */}
-              <div className="md:col-span-7 h-[360px] md:h-[520px] bg-black">
+              <div className="md:col-span-7 h-[260px] sm:h-[340px] md:h-full min-h-[260px] md:min-h-[500px] bg-black">
                 <img
                   src={selectedImage.image}
                   alt={selectedImage.title}
@@ -119,7 +119,7 @@ export default function PortfolioGallery({ onSelectServiceForBooking }) {
               </div>
 
               {/* Right Column: Editorial Details */}
-              <div className="md:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white">
+              <div className="md:col-span-5 p-5 sm:p-8 flex flex-col justify-between bg-white">
                 <div>
                   <span className="inline-block text-[10px] uppercase font-bold tracking-[0.25em] text-gold-700 bg-gold-50 px-3 py-1 rounded-full mb-3">
                     {selectedImage.tag}
@@ -127,11 +127,11 @@ export default function PortfolioGallery({ onSelectServiceForBooking }) {
                   <h3 className="font-playfair text-2xl sm:text-3xl font-medium text-[#1C1819] mb-3">
                     {selectedImage.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#5C5457] leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#5C5457] leading-relaxed mb-5">
                     {selectedImage.subtitle}
                   </p>
                   
-                  <div className="p-4 rounded-xl bg-champagne-light border border-[#EBDDC9] space-y-2 mb-6">
+                  <div className="p-3.5 sm:p-4 rounded-xl bg-champagne-light border border-[#EBDDC9] space-y-1.5 sm:space-y-2 mb-6">
                     <p className="text-xs text-[#2F2A2C] font-semibold">Artistry Specifications:</p>
                     <p className="text-xs text-[#5C5457]">• Custom undertone balancing</p>
                     <p className="text-xs text-[#5C5457]">• 18-hour sweat & camera-proof finish</p>
@@ -139,21 +139,21 @@ export default function PortfolioGallery({ onSelectServiceForBooking }) {
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2.5">
                   <button
                     onClick={() => {
                       const lookTitle = selectedImage.title;
                       setSelectedImage(null);
                       onSelectServiceForBooking(`Inquiry for Look: ${lookTitle}`);
                     }}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#1C1819] hover:bg-gold-700 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center gap-2 shadow-md"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#1C1819] hover:bg-gold-700 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center gap-2 shadow-md min-h-[44px]"
                   >
                     <span>Request This Look</span>
                     <ArrowRight className="w-4 h-4 text-gold-300" />
                   </button>
                   <button
                     onClick={() => setSelectedImage(null)}
-                    className="w-full py-2.5 text-xs uppercase tracking-widest text-[#7A582E] hover:text-[#1C1819]"
+                    className="w-full py-2 text-xs uppercase tracking-widest text-[#7A582E] hover:text-[#1C1819] min-h-[38px]"
                   >
                     Close Preview
                   </button>

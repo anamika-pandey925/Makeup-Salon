@@ -4,7 +4,7 @@ import { SALON_INFO } from '../data/salonData';
 
 export default function Hero({ onOpenBooking, onExploreServices }) {
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#FAF8F5]">
+    <section id="home" className="relative min-h-[92vh] supports-[height:100dvh]:min-h-[92dvh] flex items-center justify-center overflow-hidden bg-[#FAF8F5]">
       {/* Background with luxury bridal overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -33,21 +33,21 @@ export default function Hero({ onOpenBooking, onExploreServices }) {
           </div>
 
           {/* Heading strictly as requested */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-playfair font-normal text-white leading-[1.12] mb-6 drop-shadow-md">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-playfair font-normal text-white leading-[1.12] mb-6 drop-shadow-md break-words">
             Enhance Your Beauty, <br />
             <span className="italic font-light text-gold-200">Celebrate Your Elegance.</span>
           </h1>
 
           {/* Subtitle strictly as requested */}
-          <p className="text-base sm:text-lg lg:text-xl text-[#F4ECE1] font-light leading-relaxed mb-10 max-w-xl font-poppins">
+          <p className="text-sm sm:text-lg lg:text-xl text-[#F4ECE1] font-light leading-relaxed mb-8 sm:mb-10 max-w-xl font-poppins">
             Professional Makeup & Beauty Services for Every Special Moment.
           </p>
 
           {/* Action Buttons strictly as requested */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 mb-14">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5 mb-10 sm:mb-14">
             <button
               onClick={() => onOpenBooking()}
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.2em] shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 active:from-gold-700 active:to-gold-800 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.2em] shadow-lg hover:shadow-glow transition-all duration-300 min-h-[48px]"
             >
               <Calendar className="w-4 h-4" />
               <span>Book an Appointment</span>
@@ -55,7 +55,7 @@ export default function Hero({ onOpenBooking, onExploreServices }) {
 
             <button
               onClick={() => onExploreServices()}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/40 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-300 transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/15 hover:bg-white/25 active:bg-white/35 backdrop-blur-md border border-white/40 text-white font-medium text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-300 min-h-[48px]"
             >
               <span>Explore Services</span>
               <ArrowRight className="w-4 h-4 text-gold-300" />
@@ -63,13 +63,13 @@ export default function Hero({ onOpenBooking, onExploreServices }) {
           </div>
 
           {/* Trust Metrics Pill Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-white/20">
             {SALON_INFO.stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col">
-                <span className="font-playfair text-2xl sm:text-3xl text-gold-300 font-semibold">
+              <div key={idx} className="flex flex-col p-1.5 sm:p-0">
+                <span className="font-playfair text-xl sm:text-3xl text-gold-300 font-semibold">
                   {stat.value}
                 </span>
-                <span className="text-xs uppercase tracking-wider text-white/80 font-light mt-0.5">
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-white/80 font-light mt-0.5">
                   {stat.label}
                 </span>
               </div>

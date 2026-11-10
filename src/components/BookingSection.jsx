@@ -131,22 +131,22 @@ Special Requests: ${formData.notes || 'None'}`
           
           {bookingConfirmed ? (
             /* Booking Success View */
-            <div className="p-8 sm:p-14 text-center animate-fade-in bg-gradient-to-b from-champagne-light/50 to-white">
-              <div className="w-20 h-20 bg-gold-100 rounded-full flex items-center justify-center text-gold-700 mx-auto mb-6 shadow-md border-2 border-gold-300">
-                <CheckCircle2 className="w-10 h-10" />
+            <div className="p-5 sm:p-12 text-center animate-fade-in bg-gradient-to-b from-champagne-light/50 to-white">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold-100 rounded-full flex items-center justify-center text-gold-700 mx-auto mb-5 sm:mb-6 shadow-md border-2 border-gold-300">
+                <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
               <span className="text-xs uppercase tracking-[0.25em] font-bold text-gold-700 block mb-2">
                 Booking Request Received
               </span>
-              <h3 className="font-playfair text-3xl sm:text-4xl font-medium text-[#1C1819] mb-4">
+              <h3 className="font-playfair text-2xl sm:text-4xl font-medium text-[#1C1819] mb-4">
                 Thank You, {bookingConfirmed.fullName}!
               </h3>
-              <p className="text-sm sm:text-base text-[#5C5457] max-w-lg mx-auto mb-6">
+              <p className="text-xs sm:text-base text-[#5C5457] max-w-lg mx-auto mb-6 leading-relaxed">
                 Your reservation request has been priority-logged under Reference <strong>#{bookingConfirmed.ref}</strong>. Our bridal coordinator will reach out within 2 hours to confirm your suite and schedule.
               </p>
 
               {/* Summary Card */}
-              <div className="max-w-md mx-auto p-5 rounded-2xl bg-cream-100 border border-[#EBDDC9] text-left text-xs sm:text-sm space-y-2 mb-8 shadow-sm">
+              <div className="max-w-md mx-auto p-4 sm:p-5 rounded-2xl bg-cream-100 border border-[#EBDDC9] text-left text-xs sm:text-sm space-y-2 mb-8 shadow-sm">
                 <div className="flex justify-between border-b border-[#EBDDC9] pb-2">
                   <span className="text-[#6E6769]">Service Selected:</span>
                   <span className="font-semibold text-[#1C1819] text-right">{bookingConfirmed.service}</span>
@@ -166,17 +166,17 @@ Special Requests: ${formData.notes || 'None'}`
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
                 <button
                   onClick={handleWhatsAppInstant}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-green-600 hover:bg-green-700 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-md"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-green-600 hover:bg-green-700 active:bg-green-800 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-md min-h-[44px]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Send Details to WhatsApp Concierge</span>
                 </button>
                 <button
                   onClick={() => setBookingConfirmed(null)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-[#DEC6A9] text-[#7A582E] hover:bg-cream-100 text-xs uppercase tracking-widest font-medium transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-[#DEC6A9] text-[#7A582E] hover:bg-cream-100 text-xs uppercase tracking-widest font-medium transition-colors min-h-[44px]"
                 >
                   Book Another Appointment
                 </button>
@@ -184,8 +184,8 @@ Special Requests: ${formData.notes || 'None'}`
             </div>
           ) : (
             /* Active Booking Form */
-            <form onSubmit={handleSubmit} className="p-8 sm:p-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="p-5 sm:p-10 lg:p-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 
                 {/* Full Name */}
                 <div>
@@ -198,7 +198,7 @@ Special Requests: ${formData.notes || 'None'}`
                     placeholder="e.g. Eleanor Vance"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-base sm:text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
                       errors.fullName ? 'border-red-400 bg-red-50/20' : 'border-[#EBDDC9]'
                     }`}
                   />
@@ -216,7 +216,7 @@ Special Requests: ${formData.notes || 'None'}`
                     placeholder="e.g. +1 (555) 019-2834"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-base sm:text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
                       errors.phone ? 'border-red-400 bg-red-50/20' : 'border-[#EBDDC9]'
                     }`}
                   />
@@ -234,7 +234,7 @@ Special Requests: ${formData.notes || 'None'}`
                     placeholder="eleanor@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-base sm:text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
                       errors.email ? 'border-red-400 bg-red-50/20' : 'border-[#EBDDC9]'
                     }`}
                   />
@@ -250,7 +250,7 @@ Special Requests: ${formData.notes || 'None'}`
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-base sm:text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all"
                   >
                     <optgroup label="Signature Services">
                       {SERVICES.map((s) => (
@@ -280,7 +280,7 @@ Special Requests: ${formData.notes || 'None'}`
                     min={todayStr}
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className={`w-full px-4 py-3 rounded-xl border text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
+                    className={`w-full px-4 py-3 rounded-xl border text-base sm:text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all ${
                       errors.date ? 'border-red-400 bg-red-50/20' : 'border-[#EBDDC9]'
                     }`}
                   />
@@ -296,7 +296,7 @@ Special Requests: ${formData.notes || 'None'}`
                   <select
                     value={formData.time}
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-base sm:text-sm text-[#1C1819] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all"
                   >
                     {timeSlots.map((slot, idx) => (
                       <option key={idx} value={slot}>
@@ -313,7 +313,7 @@ Special Requests: ${formData.notes || 'None'}`
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label
-                      className={`p-3.5 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${
+                      className={`p-3 sm:p-3.5 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${
                         formData.venueType === 'Studio VIP Suite'
                           ? 'border-gold-500 bg-gold-50/60 font-semibold text-[#1C1819]'
                           : 'border-[#EBDDC9] bg-[#FAF8F5] text-[#5C5457]'
@@ -331,7 +331,7 @@ Special Requests: ${formData.notes || 'None'}`
                     </label>
 
                     <label
-                      className={`p-3.5 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${
+                      className={`p-3 sm:p-3.5 rounded-xl border flex items-center gap-3 cursor-pointer transition-all ${
                         formData.venueType === 'On-Venue Destination'
                           ? 'border-gold-500 bg-gold-50/60 font-semibold text-[#1C1819]'
                           : 'border-[#EBDDC9] bg-[#FAF8F5] text-[#5C5457]'
@@ -361,7 +361,7 @@ Special Requests: ${formData.notes || 'None'}`
                     placeholder="Tell us about your wedding attire, jewelry theme, number of bridesmaids, or any skin sensitivities..."
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-[#EBDDC9] text-base sm:text-sm text-[#1C1819] placeholder-[#9E9698] bg-[#FAF8F5] focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all resize-none"
                   />
                 </div>
 
@@ -378,7 +378,7 @@ Special Requests: ${formData.notes || 'None'}`
                   <button
                     type="button"
                     onClick={handleWhatsAppInstant}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-green-600 text-green-700 hover:bg-green-50 text-xs uppercase tracking-wider font-semibold transition-colors"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-green-600 text-green-700 hover:bg-green-50 text-xs uppercase tracking-wider font-semibold transition-colors min-h-[46px]"
                   >
                     <MessageCircle className="w-4 h-4 text-green-600" />
                     <span>WhatsApp</span>
@@ -387,7 +387,7 @@ Special Requests: ${formData.notes || 'None'}`
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#1C1819] to-[#2D282A] hover:from-gold-600 hover:to-gold-700 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md disabled:opacity-70"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-[#1C1819] to-[#2D282A] hover:from-gold-600 hover:to-gold-700 text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all shadow-md disabled:opacity-70 min-h-[46px]"
                   >
                     {isSubmitting ? (
                       <span>Reserving...</span>

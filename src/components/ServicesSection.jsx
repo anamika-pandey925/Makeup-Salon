@@ -31,13 +31,13 @@ export default function ServicesSection({ onSelectServiceForBooking }) {
             Every service is tailored with dermatological precision and luxury couture aesthetics to ensure your beauty resonates effortlessly under camera lights and through emotional moments.
           </p>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+          {/* Category Filter Pills with Smooth Touch Scroll */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap sm:justify-center no-scrollbar mt-6 sm:mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 ${
+                className={`whitespace-nowrap shrink-0 px-4 sm:px-5 py-2 rounded-full text-xs uppercase tracking-widest font-medium transition-all duration-300 min-h-[38px] ${
                   activeCategory === cat
                     ? 'bg-[#1C1819] text-white shadow-md'
                     : 'bg-white/80 hover:bg-white text-[#5C5457] border border-[#EBDDC9] hover:border-gold-400'

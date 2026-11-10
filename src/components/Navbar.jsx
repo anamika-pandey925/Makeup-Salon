@@ -101,18 +101,19 @@ export default function Navbar({ onOpenBooking }) {
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile & Tablet Menu Controls */}
             <div className="flex items-center space-x-3 xl:hidden">
               <button
                 onClick={() => onOpenBooking()}
-                className="inline-flex sm:hidden items-center justify-center p-2 text-xs font-medium uppercase tracking-wider text-white bg-[#1C1819] rounded-full"
-                aria-label="Book"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#1C1819] hover:bg-gold-700 rounded-full transition-colors shadow-sm"
+                aria-label="Book Appointment"
               >
-                <Calendar className="w-4 h-4 text-gold-300" />
+                <Calendar className="w-3.5 h-3.5 text-gold-300" />
+                <span className="hidden sm:inline">Book Now</span>
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-[#1C1819] hover:text-gold-600 hover:bg-gold-50 transition-colors focus:outline-none"
+                className="p-2 rounded-xl text-[#1C1819] hover:text-gold-600 hover:bg-gold-50 transition-colors focus:outline-none"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -121,31 +122,38 @@ export default function Navbar({ onOpenBooking }) {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Drawer with iOS Safe Scroll */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-[#FAF8F5] border-b border-[#EBDDC9] shadow-xl px-4 pt-3 pb-6 animate-fade-in">
-            <div className="flex flex-col space-y-3">
+          <div className="xl:hidden bg-[#FAF8F5] border-b border-[#EBDDC9] shadow-xl px-4 pt-3 pb-8 max-h-[calc(100dvh-5rem)] overflow-y-auto ios-scroll animate-fade-in">
+            <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-sm uppercase tracking-widest font-medium text-[#2F2A2C] hover:text-gold-700 hover:bg-gold-100/50 rounded-md transition-colors"
+                  className="px-3.5 py-2.5 text-sm uppercase tracking-widest font-medium text-[#2F2A2C] hover:text-gold-700 hover:bg-gold-100/50 rounded-xl transition-colors active:bg-gold-200/50"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="pt-2 border-t border-[#EBDDC9]">
+              <div className="pt-3 border-t border-[#EBDDC9]">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-[#1C1819] text-white text-xs uppercase tracking-widest font-semibold hover:bg-gold-600 transition-colors shadow-md"
+                  className="w-full mt-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-full bg-[#1C1819] hover:bg-gold-700 active:bg-gold-800 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-md min-h-[44px]"
                 >
                   <Calendar className="w-4 h-4 text-gold-300" />
                   Reserve Your Date
                 </button>
+                <a
+                  href={`tel:${SALON_INFO.phone}`}
+                  className="w-full mt-2 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-gold-300 text-[#7A582E] text-xs uppercase tracking-widest font-semibold hover:bg-gold-50 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-gold-600" />
+                  <span>Call {SALON_INFO.phone}</span>
+                </a>
               </div>
             </div>
           </div>

@@ -68,13 +68,13 @@ export default function PricingPackages({ onSelectPackageForBooking }) {
           </p>
 
           {/* Price Customizer Toggle */}
-          <div className="inline-flex items-center gap-3 p-1.5 bg-white rounded-full border border-[#EBDDC9] shadow-sm">
-            <span className="text-xs uppercase tracking-wider font-semibold text-[#6E6769] pl-3">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 p-2 sm:p-1.5 bg-white rounded-2xl sm:rounded-full border border-[#EBDDC9] shadow-sm max-w-full">
+            <span className="text-xs uppercase tracking-wider font-semibold text-[#6E6769] px-2 sm:pl-3 text-center sm:text-left">
               Custom Package Adjustments:
             </span>
             <button
               onClick={() => setIsEditingPrices(!isEditingPrices)}
-              className={`px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all ${
+              className={`px-4 py-2 sm:py-1.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all min-h-[38px] ${
                 isEditingPrices
                   ? 'bg-gold-600 text-white shadow-sm'
                   : 'bg-gold-50 text-gold-800 hover:bg-gold-100'
@@ -86,7 +86,7 @@ export default function PricingPackages({ onSelectPackageForBooking }) {
         </div>
 
         {/* 4 Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {packagesList.map((pkg) => {
             const currentTotal = calculatePackageTotal(pkg);
             return (
@@ -94,7 +94,7 @@ export default function PricingPackages({ onSelectPackageForBooking }) {
                 key={pkg.id}
                 className={`relative rounded-3xl transition-all duration-500 flex flex-col justify-between ${
                   pkg.highlight
-                    ? 'bg-gradient-to-b from-[#1C1819] to-[#2D282A] text-white shadow-2xl scale-105 border-2 border-gold-500/60 z-10'
+                    ? 'bg-gradient-to-b from-[#1C1819] to-[#2D282A] text-white shadow-2xl lg:scale-105 border-2 border-gold-500/60 z-10'
                     : 'bg-white text-[#1C1819] shadow-soft hover:shadow-xl border border-[#EBDDC9]'
                 }`}
               >
@@ -163,7 +163,7 @@ export default function PricingPackages({ onSelectPackageForBooking }) {
                           type="number"
                           value={pkg.price}
                           onChange={(e) => handlePriceChange(pkg.id, e.target.value)}
-                          className={`w-20 px-2 py-1 text-xs rounded border text-black font-semibold focus:outline-none`}
+                          className={`w-20 px-2 py-1 text-base sm:text-xs rounded border text-black font-semibold focus:outline-none`}
                         />
                       </div>
                     ) : (
